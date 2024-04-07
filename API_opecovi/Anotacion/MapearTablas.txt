@@ -1,0 +1,5 @@
+Scaffold-DbContext "workstation id=DBopecovi.mssql.somee.com;packet size=4096;user id=usr_developer;pwd=123+opecovi;data source=DBopecovi.mssql.somee.com;persist security info=False;initial catalog=DBopecovi;TrustServerCertificate=True" Microsoft.EntityFrameworkCore.SqlServer -DataAnnotations -Context "_dbContext" -Force
+
+/*REINICIAR EL IDENTITY  DE UNA TABLA*/
+DELETE FROM access.role
+DBCC CHECKIDENT('access.role' , RESEED, 0)>	
