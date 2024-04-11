@@ -56,20 +56,15 @@ namespace API_opecovi.Controllers
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
-            //select * from persona where id = {id}
-            int rowAfected = 0;
+            int rowAffected = 0;
             MPersona per = _db.MPersonas.Find(id);
-
             if (per != null)
             {
-
                 _db.MPersonas.Remove(per);
-                rowAfected = _db.SaveChanges();
-
+                rowAffected = _db.SaveChanges();
+                return Ok(new { message = $"Nro de Registro Eliminados: {rowAffected}" });
             }
-
-
-            return Ok($"Nro de Registro Eliminados: {rowAfected}");
+            return NotFound();
         }
 
 

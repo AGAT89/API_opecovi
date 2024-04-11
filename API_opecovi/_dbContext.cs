@@ -167,7 +167,7 @@ public partial class _dbContext : DbContext
         {
             entity.HasKey(e => e.IdPersona).HasName("XPKm_persona");
 
-            entity.Property(e => e.IdPersona).ValueGeneratedNever();
+            entity.Property(e => e.IdPersona).ValueGeneratedOnAdd();
 
             entity.HasOne(d => d.IdEmpresaNavigation).WithMany(p => p.MPersonas).HasConstraintName("R_78");
         });

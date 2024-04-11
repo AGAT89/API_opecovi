@@ -11,6 +11,7 @@ public partial class MPersona
 {
     [Key]
     [Column("id_persona")]
+    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int IdPersona { get; set; }
 
     [Column("id_empresa")]
@@ -47,12 +48,12 @@ public partial class MPersona
     public string Nombres { get; set; } = null!;
 
     [Column("razon_social")]
-    [StringLength(30)]
+    [StringLength(50)]
     [Unicode(false)]
     public string? RazonSocial { get; set; }
 
     [Column("direccion")]
-    [StringLength(20)]
+    [StringLength(80)]
     [Unicode(false)]
     public string Direccion { get; set; } = null!;
 
